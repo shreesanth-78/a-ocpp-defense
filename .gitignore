@@ -1,0 +1,16 @@
+# Environment & Secrets
+.venv/
+ocpp_defence/
+.env
+
+# Datasets & Notebook checkpoints
+data/
+.ipynb_checkpoints/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# IDE / OS
+.vscode/
+.DS_Store

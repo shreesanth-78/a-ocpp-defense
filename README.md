@@ -13,9 +13,6 @@ The system follows a streamlined 4-agent pipeline:
 4. **Response Agent (LLM + Policy Engine):** Selects an optimal mitigation strategy (`alert_operator`, `throttle_charger_power`, `soft_reset_charger`, `drop_websocket_session`) and passes it through a deterministic policy validation layer.
 
 ## Repository Structure
-## Repository Structure
-
-```text
 a-ocpp-defense/
 │
 ├── agents/

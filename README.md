@@ -13,16 +13,35 @@ The system follows a streamlined 4-agent pipeline:
 4. **Response Agent (LLM + Policy Engine):** Selects an optimal mitigation strategy (`alert_operator`, `throttle_charger_power`, `soft_reset_charger`, `drop_websocket_session`) and passes it through a deterministic policy validation layer.
 
 ## Repository Structure
+## Repository Structure
+
+```text
 a-ocpp-defense/
-├── agents/             # Autonomous agent definitions (LangGraph nodes)
-├── tools/              # Deterministic execution tools & policy engine
-├── workflow/           # LangGraph state machine & pipeline routing
-├── simulator/          # OCPP traffic replay & simulation harness
-├── models/             # Trained ML baseline model artifacts
-├── notebooks/          # Data exploration & baseline training notebooks
-├── data/               # Local datasets (ignored by Git)
-├── main.py             # Main entry point
-└── requirements.txt    # Project dependencies
+│
+├── agents/
+│   ├── detection_agent.py
+│   ├── threat_intel_agent.py
+│   ├── triage_agent.py
+│   └── response_agent.py
+│
+├── tools/
+│   └── mitigation_tools.py
+│
+├── workflow/
+│   └── graph.py
+│
+├── simulator/
+│
+├── models/
+│
+├── notebooks/
+│
+├── data/
+│
+├── .env
+├── .gitignore
+├── main.py
+└── requirements.txt
 
 ## Current Status
 - **Phase:** Initializing project structure, environment, and dataset research.

@@ -1,0 +1,74 @@
+{
+  "TCP_Flood": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Overwhelms the Charge Point or CSMS network interface. Prevents legitimate OCPP WebSocket heartbeats and transaction messages from being processed.",
+    "severity": "High"
+  },
+  "UDP_Flood": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Consumes bandwidth and router processing power. May drop the OCPP WebSocket connection leading to temporary 'Denial of Charge'.",
+    "severity": "High"
+  },
+  "SYN_Flood": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Exhausts TCP connection limits on the charger or backend, preventing new EV drivers from initiating charging sessions (Authorize/StartTransaction).",
+    "severity": "High"
+  },
+  "PSHACK_Flood": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Forces the system to process empty or garbage data, wasting CPU cycles on the CSMS or Charge Point.",
+    "severity": "High"
+  },
+  "TCP_Port_Scan": {
+    "tactic": "Discovery",
+    "technique": "Network Service Scanning (T0842)",
+    "ocpp_impact": "Reconnaissance. Attacker is looking for open ports (e.g., SSH, HTTP, WebSocket) on the charging station to find unpatched firmware vulnerabilities.",
+    "severity": "Low"
+  },
+  "SYN_Stealth_Scan": {
+    "tactic": "Discovery",
+    "technique": "Network Service Scanning (T0842)",
+    "ocpp_impact": "Covert reconnaissance to map the EV charging network topology without completing TCP handshakes and avoiding basic firewall logs.",
+    "severity": "Medium"
+  },
+  "Vulnerability_Scan": {
+    "tactic": "Discovery",
+    "technique": "Network Service Scanning (T0842)",
+    "ocpp_impact": "Active probing for known CVEs in the charger's web interface or outdated firmware.",
+    "severity": "Medium"
+  },
+  "Service_Version_Detection": {
+    "tactic": "Discovery",
+    "technique": "Network Service Scanning (T0842)",
+    "ocpp_impact": "Attacker is attempting to identify the exact OS and OCPP server version to craft a targeted exploit.",
+    "severity": "Medium"
+  },
+  "OS_Fingerprinting": {
+    "tactic": "Discovery",
+    "technique": "Network Service Scanning (T0842)",
+    "ocpp_impact": "Identifying the underlying operating system (e.g., embedded Linux) of the Charge Point.",
+    "severity": "Low"
+  },
+  "Aggressive_Scan": {
+    "tactic": "Discovery",
+    "technique": "Network Service Scanning (T0842)",
+    "ocpp_impact": "Loud, high-speed probing for vulnerabilities across all services. Often precedes a direct exploit attempt.",
+    "severity": "Medium"
+  },
+  "Slowloris_Scan": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Ties up HTTP/WebSocket connections by sending partial requests slowly. Can completely freeze the charger's communication module.",
+    "severity": "High"
+  },
+  "SynonymousIP_Flood": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Spoofed IP flooding designed to bypass basic IP filtering and crash the endpoint.",
+    "severity": "High"
+  }
+}

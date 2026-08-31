@@ -1,0 +1,11 @@
+Sample_ID,True_Label,Context_Priority,ML_Prediction,Baseline_Action,Baseline_Latency_ms,Agentic_Risk,Agentic_Action,Agentic_Latency_ms
+1,TCP_Port_Scan,Critical Fleet,TCP_Port_Scan,drop_websocket_session,30.355,Medium,alert_operator,2260.38
+2,Benign,Standard Commercial,Benign,none,17.178,None,none,17.46
+3,TCP_Flood,Critical Fleet,TCP_Flood,drop_websocket_session,15.012,Critical,drop_websocket_session,1981.21
+4,Benign,Standard Commercial,Benign,none,19.597,None,none,25.32
+5,SYN_Flood,Critical Fleet,SYN_Flood,drop_websocket_session,14.222,Critical,drop_websocket_session,1987.93
+6,SYN_Stealth_Scan,Standard Commercial,SYN_Stealth_Scan,drop_websocket_session,24.463,Medium,alert_operator,1644.68
+7,TCP_Port_Scan,Critical Fleet,TCP_Port_Scan,drop_websocket_session,19.589,Medium,alert_operator,2199.33
+8,TCP_Flood,Standard Commercial,TCP_Flood,drop_websocket_session,18.93,High,throttle_charger_power,1824.27
+9,SYN_Stealth_Scan,Critical Fleet,SYN_Stealth_Scan,drop_websocket_session,17.008,High,throttle_charger_power,1720.35
+10,SYN_Flood,Standard Commercial,SYN_Flood,drop_websocket_session,16.955,High,alert_operator,1618.87

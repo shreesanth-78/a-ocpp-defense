@@ -23,39 +23,51 @@
     "ocpp_impact": "Forces the system to process empty or garbage data, wasting CPU cycles on the CSMS or Charge Point.",
     "severity": "High"
   },
+  "ICMP_Flood": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Floods the network with ping requests, degrading network performance and potentially causing packet loss for time-sensitive OCPP messages.",
+    "severity": "Medium"
+  },
+  "ICMP_Fragmentation": {
+    "tactic": "Impact",
+    "technique": "Network Denial of Service (T0814)",
+    "ocpp_impact": "Exploits IP fragmentation to exhaust the charger's memory buffer, leading to system hangs or dropped network connections.",
+    "severity": "Medium"
+  },
   "TCP_Port_Scan": {
     "tactic": "Discovery",
-    "technique": "Network Service Scanning (T0842)",
+    "technique": "Remote System Discovery (T0846)",
     "ocpp_impact": "Reconnaissance. Attacker is looking for open ports (e.g., SSH, HTTP, WebSocket) on the charging station to find unpatched firmware vulnerabilities.",
     "severity": "Low"
   },
   "SYN_Stealth_Scan": {
     "tactic": "Discovery",
-    "technique": "Network Service Scanning (T0842)",
+    "technique": "Remote System Discovery (T0846)",
     "ocpp_impact": "Covert reconnaissance to map the EV charging network topology without completing TCP handshakes and avoiding basic firewall logs.",
     "severity": "Medium"
   },
   "Vulnerability_Scan": {
     "tactic": "Discovery",
-    "technique": "Network Service Scanning (T0842)",
+    "technique": "Remote System Discovery (T0846)",
     "ocpp_impact": "Active probing for known CVEs in the charger's web interface or outdated firmware.",
     "severity": "Medium"
   },
   "Service_Version_Detection": {
     "tactic": "Discovery",
-    "technique": "Network Service Scanning (T0842)",
+    "technique": "Remote System Discovery (T0846)",
     "ocpp_impact": "Attacker is attempting to identify the exact OS and OCPP server version to craft a targeted exploit.",
     "severity": "Medium"
   },
   "OS_Fingerprinting": {
     "tactic": "Discovery",
-    "technique": "Network Service Scanning (T0842)",
+    "technique": "Remote System Discovery (T0846)",
     "ocpp_impact": "Identifying the underlying operating system (e.g., embedded Linux) of the Charge Point.",
     "severity": "Low"
   },
   "Aggressive_Scan": {
     "tactic": "Discovery",
-    "technique": "Network Service Scanning (T0842)",
+    "technique": "Remote System Discovery (T0846)",
     "ocpp_impact": "Loud, high-speed probing for vulnerabilities across all services. Often precedes a direct exploit attempt.",
     "severity": "Medium"
   },

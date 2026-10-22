@@ -32,6 +32,68 @@ The system follows a streamlined 4-agent pipeline coordinated as a Directed Acyc
 * `main.py`: Main entry point[cite: 4].
 * `requirements.txt`: Project dependencies[cite: 4].
 
+## How to Run a Demo (Quick Start)
+
+Follow these steps to clone the repository and run the end-to-end traffic simulation showcasing the 4-agent pipeline.
+
+### 1. Clone the Repository
+Clone the project to your local machine:
+```bash
+git clone [https://github.com/shreesanth-78/a-ocpp-defense.git](https://github.com/shreesanth-78/a-ocpp-defense.git)
+cd a-ocpp-defense
+```
+
+## Set Up a Virtual Environment
+Isolate the project dependencies by creating a Python virtual environment:
+## For Windows:
+```bash
+python -m venv ocpp_defence
+.\ocpp_defence\Scripts\activate
+```
+## For macOS/Linux:
+
+```Bash
+python3 -m venv ocpp_defence
+source ocpp_defence/bin/activate
+```
+## Install Dependencies
+Install the required libraries (including xgboost, langgraph, openai, and pandas):
+
+```Bash
+pip install -r requirements.txt
+```
+
+## Configure Environment Variables
+The Risk Triage and Response agents require an LLM API to perform reasoning. Create a .env file in the root directory and configure it with your API provider details (the project natively uses openai/gpt-oss-120b via Groq):
+
+```Code snippet
+LLM_API_KEY=your_actual_api_key_here
+LLM_BASE_URL=[https://api.groq.com/openai/v1](https://api.groq.com/openai/v1)
+LLM_MODEL=openai/gpt-oss-120b
+```
+## Run the End-to-End Traffic Simulator
+The traffic simulator replays pre-configured telemetry samples from the dataset to demonstrate how the agentic pipeline responds dynamically to different attacks and grid contexts.
+
+```Bash
+python simulator/traffic_simulator.py
+```
+## What to Expect:
+The simulator will output three distinct scenarios:
+
+Normal Daytime Charging (Benign): Bypasses the LLM entirely, exiting in ~17-41 ms with zero API token cost.
+
+Reconnaissance on Critical Fleet Hub (SYN_Stealth_Scan): A medium-severity scan is upgraded to High Risk by Agent 3 due to peak grid load, triggering Agent 4 to throttle the charger power.
+
+Volumetric DoS Attack (TCP_Flood): A high-severity flood on an idle commercial charger triggers a proportionate alert_operator action rather than a hard disconnect.
+
+## Run the Comparative Evaluation (Optional)
+To see how the 4-agent pipeline statistically compares against a rigid, standalone ML baseline across a 10-sample benchmark:
+
+```Bash
+python evaluation/evaluate_pipeline.py
+```
+This will output a side-by-side comparative table demonstrating the agentic framework's ability to eliminate over-reactions on minor reconnaissance scans[cite: 2].
+
 ## Authors
 * **Students**: Kirupashankar Chockkanathan, Shree Santh B[cite: 4].
 * **Guides**: Dr. Manimaran S, Dr. David Amar Raj[cite: 4].

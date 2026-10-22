@@ -7,6 +7,7 @@ The 4-Agent Autonomous OCPP Cyber Defense Framework (A-OCPP) is an agentic AI pi
 * To eliminate monolithic decision-making by decoupling detection, threat correlation, contextual triage, and policy-governed mitigation into verifiable stages orchestrated via LangGraph[cite: 2, 3].
 
 ## System Architecture: The 4-Agent Pipeline
+![A-OCPP 4-Agent Architecture](Architecture%20Diagram.png)
 The system follows a streamlined 4-agent pipeline coordinated as a Directed Acyclic Graph (DAG) using LangGraph[cite: 2, 4]:
 
 * **Agent 1: Detection Agent (ML)**: Evaluates incoming OCPP network/flow telemetry using a trained classifier (e.g., XGBoost) to generate anomaly scores and feature attributions[cite: 4]. It serves as the line-rate anomaly screener, encapsulating a trained multi-class XGBoost classifier[cite: 2].
